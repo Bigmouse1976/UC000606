@@ -131,11 +131,15 @@ Os fluxogramas são representações gráficas de algoritmos que utilizam símbo
 
 **Exemplo 1.3 – Descrição de fluxograma para verificar se um número é par:**
 ```
-[Início] → [Ler número] → [número é divisível por 2?]
-                              ↓ Sim           ↓ Não
-                         [Escrever "Par"] [Escrever "Ímpar"]
-                              ↓                 ↓
-                              → [Fim] ←
+             [Início]
+                 |
+           [Ler número] 
+                 |
+  [número é divisível por 2?]
+ ↓ Sim                 ↓ Não
+[Escrever "Par"]  [Escrever "Ímpar"]
+          |          |                           
+          → [Fim] ←
 ```
 
 #### 1.3 Introdução ao Python
