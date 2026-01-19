@@ -677,6 +677,115 @@ else:
 ```
 
 ---
+# Exercício – Cálculo do custo de estacionamento
+
+## Contexto
+Um parque de estacionamento pretende desenvolver um programa em **Python**, utilizando programação estruturada, para calcular o valor a pagar por um cliente.  
+O cálculo deve ter em conta o **tipo de veículo**, o **tempo de permanência** e a existência de **descontos**.
+
+O programa deve executar o cálculo **uma única vez**, não sendo permitida a utilização de ciclos (`while` ou `for`).
+
+---
+
+## Objetivo
+Aplicar os conhecimentos adquiridos até ao **Exemplo 3.10**, nomeadamente:
+- Entrada e saída de dados
+- Estruturas de decisão (`if`, `elif`, `else`)
+- Operadores aritméticos e lógicos
+- Variáveis simples
+- Validação de dados
+
+---
+
+## 1. Entrada de dados
+
+O programa deve solicitar ao utilizador:
+
+- O **tipo de veículo**:
+  - `L` – Ligeiro  
+  - `M` – Motociclo  
+  - `P` – Pesado  
+
+- O **número de horas** de estacionamento (inteiro positivo)
+
+- Se o cliente é **cliente frequente**:
+  - `S` – Sim  
+  - `N` – Não  
+
+---
+
+## 2. Tabela de preços por hora
+
+| Tipo de veículo | Preço por hora |
+|-----------------|---------------|
+| Ligeiro (L)     | 2,00 €        |
+| Motociclo (M)   | 1,00 €        |
+| Pesado (P)      | 3,50 €        |
+
+---
+
+## 3. Validação dos dados
+
+O programa deve validar os dados introduzidos:
+
+- O tipo de veículo deve ser `L`, `M` ou `P`
+- O número de horas deve ser superior a zero
+- A indicação de cliente frequente deve ser `S` ou `N`
+
+Se algum dos dados for inválido, o programa deve apresentar uma mensagem de erro adequada e terminar a execução, sem efetuar quaisquer cálculos.
+
+---
+
+## 4. Cálculo do custo base
+
+O custo base é calculado da seguinte forma:
+
+    custo_base = preço_por_hora × número_de_horas
+
+
+---
+
+## 5. Desconto por tempo de permanência
+
+Deve ser aplicado **apenas um** dos seguintes descontos:
+
+- Mais de **10 horas** → **20%** de desconto  
+- Entre **6 e 10 horas** (inclusive) → **10%** de desconto  
+- Menos de **6 horas** → **0%** de desconto  
+
+---
+
+## 6. Desconto adicional para cliente frequente
+
+Se o cliente for frequente (`S`), deve ser aplicado um **desconto adicional de 5%** sobre o valor já com o desconto de tempo aplicado.
+
+---
+
+## 7. Resultados a apresentar
+
+Se todos os dados forem válidos, o programa deve apresentar:
+
+- Tipo de veículo
+- Número de horas de estacionamento
+- Custo base
+- Percentagem total de desconto aplicada
+- Valor total do desconto
+- Valor final a pagar
+
+Os valores monetários devem ser apresentados com duas casas decimais.
+
+---
+
+## 8. Restrições técnicas
+
+O programa deve respeitar as seguintes restrições:
+
+- Não utilizar ciclos (`while`, `for`)
+- Não utilizar listas, dicionários ou funções
+- Utilizar apenas estruturas sequenciais e de decisão
+- Utilizar exclusivamente os conteúdos abordados até ao **Exemplo 3.10**
+
+---
 
 ### UNIDADE TEMÁTICA 4: ESTRUTURAS DE CONTROLO – REPETIÇÃO
 **Duração:** 10 horas (2.5 sessões)
