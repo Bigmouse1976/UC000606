@@ -786,7 +786,67 @@ O programa deve respeitar as seguintes restrições:
 - Utilizar exclusivamente os conteúdos abordados até ao **Exemplo 3.10**
 
 ---
+## Solução do exercicio
+```python
 
+# Entrada de Dados
+tipo_veiculo = input("Introduza tipo de veiculo L/M/P : ")
+horas = int(input("Introduza nr de horas de estacionamento > 0 : "))
+cliente_frequente = input("É cliente frequente ? (S)im (N)ão : ")
+
+# Validação de dados
+erro_de_dados = False
+
+if tipo_veiculo.upper() != "L" and tipo_veiculo.upper() != "M" and tipo_veiculo.upper() != "P" :
+    print("Tipo de veiculo inválido")
+    erro_de_dados = True
+
+if horas <= 0 :
+    print("Horas devem ser > 0")
+    erro_de_dados = True
+
+if cliente_frequente.upper() != "S" and cliente_frequente.upper() != "N":
+    print("Tipo de cliente inválido")
+    erro_de_dados = True
+
+if tipo_veiculo.upper() == "L":
+    preco_hora = 2.00
+elif tipo_veiculo.upper() == "M" :
+    preco_hora = 1.00
+else: # tipo_veiculo = "P"
+    preco_hora = 3.50
+
+custo_base = preco_hora * horas
+
+if horas > 10 :
+    preco_desconto = custo_base * 0.8
+elif horas >=6 and horas <= 10 :
+    preco_desconto = custo_base * 0.9
+else: 
+    preco_desconto = custo_base
+
+if cliente_frequente.upper() == "S":
+    valor_pagar = preco_desconto * 0.95
+else:
+    valor_pagar = preco_desconto
+
+if erro_de_dados == False :
+    print("\n--- Resumo do Estacionamento ---")
+    print("Tipo de veiculo : ", tipo_veiculo.upper())
+    print("Horas estacionamento : ", horas)
+    print("Preço hora :", preco_hora)
+    print("Preço com desconto : ", preco_desconto)
+    if cliente_frequente.upper() == "S":
+        print("É Cliente frequente, tem desconto adicional de 5% ")
+    else:
+        print("Cliente não frequente !")
+
+    print(f"Total a pagar :  {valor_pagar:.2f}€")
+    print("\n--- Resumo do Estacionamento ---")
+
+else:
+    print("Ocorreu um erro de validação de dados !")
+```
 ### UNIDADE TEMÁTICA 4: ESTRUTURAS DE CONTROLO – REPETIÇÃO
 **Duração:** 10 horas (2.5 sessões)
 
@@ -828,14 +888,18 @@ print(f"A soma de 1 a 10 é: {soma}")
 **Exemplo 4.3 – Validação de entrada:**
 ```python
 password = ""
-
-while password != "python123":
+contador = 0
+while password != "python123" and contador < 3:
     password = input("Introduza a password: ")
     
     if password != "python123":
         print("Password incorreta. Tente novamente.")
-
-print("Password correta! Acesso concedido.")
+        contador += 1
+        print("Numero de tentativas restantes : ", 3 - contador)
+        if contador == 3:
+            print("Nr tentivas excedidas - acesso bloqueado !")
+    else: 
+        print("Password correta! Acesso concedido.")
 ```
 
 **Exemplo 4.4 – Menu interativo:**
