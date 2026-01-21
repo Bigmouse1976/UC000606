@@ -904,29 +904,8 @@ while password != "python123" and contador < 3:
 
 **Exemplo 4.4 – Menu interativo:**
 ```python
-opcao = 0
-
-while opcao != 4:
-    print("\n--- MENU ---")
-    print("1. Ver saldo")
-    print("2. Depositar")
-    print("3. Levantar")
-    print("4. Sair")
-    
-    opcao = int(input("Escolha uma opção: "))
-    
-    if opcao == 1:
-        print("Saldo: 1000€")
-    elif opcao == 2:
-        valor = float(input("Valor a depositar: "))
-        print(f"Depositou {valor}€")
-    elif opcao == 3:
-        valor = float(input("Valor a levantar: "))
-        print(f"Levantou {valor}€")
-    elif opcao == 4:
-        print("Até breve!")
-    else:
-        print("Opção inválida")
+if saldo < valor: 
+            print("Saldo insuficiente!")
 ```
 
 #### 4.2 Ciclo for
