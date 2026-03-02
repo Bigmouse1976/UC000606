@@ -1573,7 +1573,30 @@ med, min_val, max_val = obter_estatisticas(valores)
 
 print(f"Média: {med}, Mínimo: {min_val}, Máximo: {max_val}")
 ```
+**Exemplo 6.71 – Exercicio Listas e Tuplos:**
+```python
 
+temperaturas = [22.5, 31.0, 19.8, 28.4, 35.2, 21.1, 30.0]
+LIMITE = (15.0, 32.0)   # tuplo com (mínimo, mínimo aceitável)
+```
+
+**Faz o seguinte:**
+
+**1.** Imprime o número total de leituras.
+
+**2.** Imprime a primeira e a última leitura.
+
+**3.** Adiciona a leitura `27.3` ao fim da lista.
+
+**4.** Ordena a lista e imprime-a ordenada.
+
+**5.** Calcula e imprime a temperatura média.
+
+**6.** Usando o tuplo `LIMITE`, percorre a lista e imprime um aviso para cada leitura fora dos limites:
+```
+⚠️ ALARME: 35.2 °C fora dos limites!
+
+```
 #### 6.3 Dicionários (Dictionaries)
 
 **Definição:**
